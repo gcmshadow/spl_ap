@@ -1,0 +1,11 @@
+setupRequired(ap_verify)
+
+envPrepend(PATH, ${PRODUCT_DIR}/bin)
+envPrepend(LD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+envPrepend(DYLD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+envPrepend(LSST_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)
+
+# ap_pipe    -- indirectly resolved via ap_verify
+# ap_association    -- indirectly resolved via ap_pipe -- ap_verify
+# alert_packet      -- indirectly resolved via ap_association -- ap_pipe -- ap_verify
